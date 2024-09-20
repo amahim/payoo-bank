@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payoo</title>
+    <!-- tailwind/daisy ui -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- font Awsome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- style -->
+</head>
+<body>
+    <!-- section -->
+    <section class="border-2 border-sky-500 inline-block flex flex-col mx-auto mt-20 rounded-xl w-4/5 md:w-[20%] p-2">
+        <!-- current balance div -->
+        <div class="stats shadow bg-purple-500 rounded-xl">
+            <div class="stat">
+                <div class="stat-title text-white text-center">Current Balance($)</div>
+                <div id="current-balance" class="stat-value text-white text-center">500</div>
+            </div>
+        </div>
+        <!-- Action buttons div -->
+         <div class="flex justify-between mt-2">
+            <div><button id="addcash-menu-btn" class="btn btn-outline btn-success w-[150px] md:w-[120px]" >Add Cash</button></div>
+            <div><button id="cashout-menu-btn" class="btn btn-outline btn-error w-[150px] md:w-[120px]">Cash Out</button></div>
+         </div>
+         <div class="divider"></div>
+         <!-- Form Cash add -->
+         <div id="addcash-div" class=" border border-success">
+            <form class="card-body -mt-6">
+                <div class="form-control">
+                  <label class="label">
+                    <span class="label-text">Add money</span>
+                  </label>
+                  <input id="input-add-money" type="text" placeholder="Enter money amount" class="input input-bordered w-full input-success" required />
+                </div>
+                <div class="form-control">
+                  <label class="label">
+                    <span class="label-text">Pin</span>
+                  </label>
+                  <input id="input-pin-cashin" type="password" placeholder="Enter your pin" class="input input-bordered input-success" required />
+                </div>
+                <div class="form-control">
+                  <button id="add-money-btn" class="btn btn-success">Add Money</button>
+                </div>
+            </form>
+        </div>
+        <!-- Form Cash out -->
+        <div id="cashout-div" class=" border border-error mt-2 hidden" >
+            <form class="card-body -mt-6" id="cashout-form">
+                <div class="form-control">
+                  <label class="label">
+                    <span class="label-text">Cash Out</span>
+                  </label>
+                  <input id="input-cashout-money" type="text" placeholder="Enter money amount" class="input input-bordered w-full input-error" required />
+                </div>
+                <div class="form-control">
+                  <label class="label">
+                    <span class="label-text">Pin</span>
+                  </label>
+                  <input id="input-pin-cashout" type="password" placeholder="Enter your pin" class="input input-bordered input-error" required />
+                </div>
+                <div class="form-control">
+                  <button id="cashout-btn" class="btn btn-error">Cash Out</button>
+                </div>
+              </form>
+         </div>
+    </section>
+    <script src="./js/addMoney.js"></script>
+    <script src="./js/cashout.js"></script>
+    <script src="./js/toggle.js"></script>
+</body>
+</html>
