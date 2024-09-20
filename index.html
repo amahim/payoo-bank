@@ -1,81 +1,162 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Payoo</title>
     <!-- tailwind/daisy ui -->
-    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- font Awsome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
     <!-- style -->
-</head>
-<body>
+  </head>
+  <body>
     <!-- section -->
-    <section class=" h-[530px] border-2 border-sky-500 inline-block flex flex-col mx-auto mt-20 rounded-xl w-4/5 md:w-[20%] p-2">
-        <!-- current balance div -->
-        <div class="stats shadow bg-purple-500 rounded-xl">
-            <div class="stat">
-                <div class="stat-title text-white text-center">Current Balance($)</div>
-                <div id="current-balance" class="stat-value text-white text-center">500</div>
-            </div>
+    <section
+      class="h-[530px] border-2 border-sky-500 flex flex-col mx-auto mt-20 rounded-xl w-4/5 md:w-[20%] p-2"
+    >
+      <!-- current balance div -->
+      <div class="shadow bg-purple-500 rounded-xl">
+        <div class="stat">
+          <div class="stat-title text-white text-center">
+            Current Balance($)
+          </div>
+          <div id="current-balance" class="stat-value text-white text-center">
+            500
+          </div>
         </div>
-        <!-- Action buttons div -->
-         <div class="flex justify-between mt-2 gap-2">
-            <div class="w-[50%]"><button id="addcash-menu-btn" class="btn btn-outline btn-success w-full" >Add Cash</button></div>
-            <div class="w-[50%]"><button id="cashout-menu-btn" class="btn btn-outline btn-error w-full">Cash Out</button></div>
-         </div>
-         <div><button id="trans-menu-btn" class="btn btn-outline btn-info w-full mt-2" >Transactions</button></div>
-         <div class="divider"></div>
-         <!-- Form Cash add -->
-         <div id="addcash-div" class=" border border-success rounded-xl">
-            <form class="card-body -mt-6">
-                <div class="form-control">
-                  <label class="label">
-                    <span class="label-text">Add money</span>
-                  </label>
-                  <input id="input-add-money" type="text" placeholder="Enter money amount" class="input input-bordered w-full input-success" required />
-                </div>
-                <div class="form-control">
-                  <label class="label">
-                    <span class="label-text">Pin</span>
-                  </label>
-                  <input id="input-pin-cashin" type="password" placeholder="Enter your pin" class="input input-bordered input-success" required />
-                </div>
-                <div class="form-control">
-                  <button id="add-money-btn" class="btn btn-success">Add Money</button>
-                </div>
-            </form>
+      </div>
+      <!-- Action buttons div -->
+      <div class="flex justify-between mt-2 gap-2">
+        <div class="w-[50%]">
+          <button
+            id="addcash-menu-btn"
+            class="btn btn-outline btn-success w-full"
+          >
+            Add Cash
+          </button>
         </div>
-        <!-- Form Cash out -->
-        <div id="cashout-div" class=" border border-error hidden rounded-xl" >
-            <form class="card-body -mt-6" id="cashout-form">
-                <div class="form-control">
-                  <label class="label">
-                    <span class="label-text">Cash Out</span>
-                  </label>
-                  <input id="input-cashout-money" type="text" placeholder="Enter money amount" class="input input-bordered w-full input-error" required />
-                </div>
-                <div class="form-control">
-                  <label class="label">
-                    <span class="label-text">Pin</span>
-                  </label>
-                  <input id="input-pin-cashout" type="password" placeholder="Enter your pin" class="input input-bordered input-error" required />
-                </div>
-                <div class="form-control">
-                  <button id="cashout-btn" class="btn btn-error">Cash Out</button>
-                </div>
-              </form>
+        <div class="w-[50%]">
+          <button
+            id="cashout-menu-btn"
+            class="btn btn-outline btn-error w-full"
+          >
+            Cash Out
+          </button>
         </div>
-        <!-- transaction -->
-         <div id="trans-div" class=" border border-info hidden rounded-xl">
-          <h3>Upcoming</h3>
-         </div>
+      </div>
+      <div>
+        <button
+          id="trans-menu-btn"
+          class="btn btn-outline btn-info w-full mt-2"
+        >
+          Transactions
+        </button>
+      </div>
+      <div class="divider"></div>
+      <!-- Form Cash add -->
+      <div id="addcash-div" class="border border-success rounded-xl">
+        <form class="card-body -mt-6">
+          <div class="form-control">
+            <label class="label">
+              <span class="label-text">Add money</span>
+            </label>
+            <input
+              id="input-add-money"
+              type="text"
+              placeholder="Enter money amount"
+              class="input input-bordered w-full input-success"
+              required
+            />
+          </div>
+          <div class="form-control">
+            <label class="label">
+              <span class="label-text">Pin</span>
+            </label>
+            <input
+              id="input-pin-cashin"
+              type="password"
+              placeholder="Enter your pin"
+              class="input input-bordered input-success"
+              required
+            />
+          </div>
+          <div class="form-control">
+            <button id="add-money-btn" class="btn btn-success">
+              Add Money
+            </button>
+          </div>
+        </form>
+      </div>
+      <!-- Form Cash out -->
+      <div id="cashout-div" class="border border-error hidden rounded-xl">
+        <form class="card-body -mt-6" id="cashout-form">
+          <div class="form-control">
+            <label class="label">
+              <span class="label-text">Cash Out</span>
+            </label>
+            <input
+              id="input-cashout-money"
+              type="text"
+              placeholder="Enter money amount"
+              class="input input-bordered w-full input-error"
+              required
+            />
+          </div>
+          <div class="form-control">
+            <label class="label">
+              <span class="label-text">Pin</span>
+            </label>
+            <input
+              id="input-pin-cashout"
+              type="password"
+              placeholder="Enter your pin"
+              class="input input-bordered input-error"
+              required
+            />
+          </div>
+          <div class="form-control">
+            <button id="cashout-btn" class="btn btn-error">Cash Out</button>
+          </div>
+        </form>
+      </div>
+      <!-- transaction -->
+      <div id="trans-div"class="h-[272px] border border-info hidden">
+        <div class="h-[272px] overflow-x-auto">
+
+          <table class="table table-pin-rows">
+            <thead>
+              <tr class="text-black bg-blue-300">
+                <th>Serial</th>
+                <th>Action</th>
+                <th>Amount</th>
+              </tr>
+            </thead>
+            <tbody id="input-table">
+
+            </tbody>
+          </table>
+          
+        </div>
+      </div>
     </section>
     <script src="./js/addMoney.js"></script>
     <script src="./js/cashout.js"></script>
     <script src="./js/toggle.js"></script>
     <script src="./js/trans.js"></script>
-</body>
+    <script>
+      let serialSum = 0;
+    </script>
+  </body>
 </html>
