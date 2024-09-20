@@ -13,7 +13,7 @@
 </head>
 <body>
     <!-- section -->
-    <section class="border-2 border-sky-500 inline-block flex flex-col mx-auto mt-20 rounded-xl w-4/5 md:w-[20%] p-2">
+    <section class=" h-[530px] border-2 border-sky-500 inline-block flex flex-col mx-auto mt-20 rounded-xl w-4/5 md:w-[20%] p-2">
         <!-- current balance div -->
         <div class="stats shadow bg-purple-500 rounded-xl">
             <div class="stat">
@@ -26,9 +26,10 @@
             <div class="w-[50%]"><button id="addcash-menu-btn" class="btn btn-outline btn-success w-full" >Add Cash</button></div>
             <div class="w-[50%]"><button id="cashout-menu-btn" class="btn btn-outline btn-error w-full">Cash Out</button></div>
          </div>
+         <div><button id="trans-menu-btn" class="btn btn-outline btn-info w-full mt-2" >Transactions</button></div>
          <div class="divider"></div>
          <!-- Form Cash add -->
-         <div id="addcash-div" class=" border border-success">
+         <div id="addcash-div" class=" border border-success rounded-xl">
             <form class="card-body -mt-6">
                 <div class="form-control">
                   <label class="label">
@@ -48,7 +49,7 @@
             </form>
         </div>
         <!-- Form Cash out -->
-        <div id="cashout-div" class=" border border-error mt-2 hidden" >
+        <div id="cashout-div" class=" border border-error hidden rounded-xl" >
             <form class="card-body -mt-6" id="cashout-form">
                 <div class="form-control">
                   <label class="label">
@@ -66,10 +67,15 @@
                   <button id="cashout-btn" class="btn btn-error">Cash Out</button>
                 </div>
               </form>
+        </div>
+        <!-- transaction -->
+         <div id="trans-div" class=" border border-info hidden rounded-xl">
+          <h3>Upcoming</h3>
          </div>
     </section>
     <script src="./js/addMoney.js"></script>
     <script src="./js/cashout.js"></script>
     <script src="./js/toggle.js"></script>
+    <script src="./js/trans.js"></script>
 </body>
 </html>
