@@ -9,11 +9,9 @@ document.getElementById('add-money-btn').addEventListener('click',function(event
         const currentBalanceNumber = parseFloat(currentBalance)
         const newTotalBalance = currentBalanceNumber + inputMoneyNumber;
         document.getElementById('current-balance').innerText = newTotalBalance
-    }else{
-        alert('Input pin correctly')
-    }
 
-    const inputTable = document.getElementById('input-table')
+        // transaction
+        const inputTable = document.getElementById('input-table')
     const tr = document.createElement('tr')
     inputTable.appendChild(tr)
     tr.className = "bg-green-500 text-white"
@@ -33,5 +31,11 @@ document.getElementById('add-money-btn').addEventListener('click',function(event
     const th3 = document.createElement('th')
     tr.appendChild(th3)
     th3.innerText = inputMoneyNumber;
+
+    }else{
+        alert('Input pin correctly')
+    }
+
+    
 
  })
